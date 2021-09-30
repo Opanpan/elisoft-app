@@ -1,0 +1,116 @@
+.leftContent {
+  width: 700px;
+  height: 800px;
+  margin-top: 70px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(40px);
+  text-align: center;
+  border-radius: 5% 0 0 5%;
+
+  @media screen and (max-width: 1400px) {
+    border-radius: 5% 5% 0 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+  }
+}
+
+#loginComponent {
+  .leftContent {
+    background-color: rgba(29, 29, 29, 0.15);
+    backdrop-filter: blur(50px);
+  }
+
+  .rightContent {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(40px);
+  }
+}
+
+.rightContent {
+  width: 700px;
+  height: 800px;
+  margin-top: 70px;
+  background-color: rgba(29, 29, 29, 0.15);
+  backdrop-filter: blur(50px);
+  text-align: center;
+  border-radius: 0 5% 5% 0;
+
+  @media screen and (max-width: 1400px) {
+    border-radius: 0 0 5% 5%;
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+  }
+}
+
+.contentItem {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 60%;
+  }
+}
+
+p {
+  border-radius: 5px;
+  color: white;
+  background-color: #d3314c;
+  position: relative;
+  bottom: 70px;
+}
+
+.formBox {
+  border-radius: 0;
+  margin-top: 20px;
+}
+
+.formInput {
+  height: 50px;
+
+  &::placeholder {
+    text-align: center;
+    color: rgb(129, 129, 129);
+  }
+}
+
+.registerButton {
+  background-color: rgb(93, 221, 8);
+  border-color: rgb(93, 221, 8);
+  color: white;
+  width: 100%;
+}
+
+.loginButton {
+  background-color: white;
+  border-color: white;
+  color: black;
+  width: 70%;
+}
+
+.customButton {
+  margin-top: 50px;
+  height: 55px;
+  border-radius: 20px;
+  font-size: 18px;
+
+  transition: 100ms;
+  text-align: center;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+
+  @media screen and (max-width: 425px) {
+    font-size: 14px;
+    width: 99px;
+    height: 36px;
+  }
+}
