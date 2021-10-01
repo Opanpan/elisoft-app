@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import styles from "./LoginRegister.scss";
+import Axios from "axios";
 
 export default function Register({ setIsLogin }) {
   const {
@@ -9,11 +9,21 @@ export default function Register({ setIsLogin }) {
     formState: { errors },
     handleSubmit,
     watch,
+    setValue,
   } = useForm();
 
   const password = useRef({});
   password.current = watch("password", "");
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    Axios.post("http://localhost:8000/register", data)
+      .then((res) => {
+        setValue("email", "");
+        setValue("password", "");
+        setValue("confirmPassword", "");
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <Container fluid>
