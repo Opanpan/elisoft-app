@@ -19,7 +19,7 @@
 2. Lalu setelah selesai sesuaikan username, password, dan database file config/config.json
 3. Jika belum menginstall Sequelize CLI lakukan perintah
 
-### `yarn add sequelize-cli -g / npm install sequelize-cli -g
+### `yarn add sequelize-cli -g / npm install sequelize-cli -g`
 
 4. Lalu jalankan perintah
 
