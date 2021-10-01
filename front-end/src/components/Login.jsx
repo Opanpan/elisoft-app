@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from "./LoginRegister.scss";
+import Axios from "axios";
 
 export default function Login({ setIsLogin }) {
   const {
@@ -9,7 +11,17 @@ export default function Login({ setIsLogin }) {
     handleSubmit,
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const history = useHistory();
+
+  const onSubmit = (data) => {
+    Axios.post("http://localhost:8000/login", data)
+      .then((res) => {
+        localStorage.setItem("auth", res.data.auth);
+        history.push("/dashboard");
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <Container id="loginComponent" fluid>
